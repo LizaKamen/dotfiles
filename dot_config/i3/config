@@ -40,6 +40,8 @@ exec_always "picom --config ~/.config/picom/picom.conf"
 
 exec_always "setxkbmap -layout us,ru -option 'grp:win_space_toggle'"
 
+exec_always "flameshot"
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -188,11 +190,15 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
+for_window [class="."] border pixel 3
 
-# class                 border  backgr. text    indicator child_border
+smart_gaps on
+
 gaps inner 10
 
-for_window [class="."] border pixel 3
+# border radius 5
+
+# class                 border  backgr. text    indicator child_border
 
 client.focused          #4c7899 #285577 #ffffff #f5bde6   #c6a0f6
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
