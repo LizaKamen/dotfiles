@@ -19,7 +19,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Set keyvoard layout
+# Set keyboard layout
 exec setxkbmap -layout us,ru -option 'grp:win_space_toggle'
 
 # Restore wal
