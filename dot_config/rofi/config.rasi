@@ -1,13 +1,13 @@
 configuration {
-   modi: "run,drun,window,calc,p:'rofi-power-menu'";
+   modi: "drun,window,calc,p:'rofi-power-menu',wal:'rofi-wal-theme-switcher'";
    font: "JetBrains Mono 12";
    terminal: "kitty";
    display-drun: "Apps ";
-   display-run: "Run ";
    display-window: "Window ";
    display-calc: "Calc ";
    display-p: "Powermenu ";
+   display-wal: "Wallpaper ";
    sidebar-mode: true;
 }
 
-@theme "~/.cache/wal/colors-rofi-dark.rasi"
+@import "~/.cache/wal/colors-rofi-light"
