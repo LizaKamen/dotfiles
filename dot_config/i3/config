@@ -13,17 +13,25 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Set keyboard layout
-exec setxkbmap -layout us,ru -option 'grp:win_space_toggle'
+# Set keyvoard layout
+exec_always setxkbmap -layout us,ru -option 'grp:win_space_toggle'
 
 # Restore wal
 exec wal -R
+
+# Launch polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Launch picom
+exec_always picom
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -48,7 +56,7 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-bindsym $mod+d exec "rofi -modi drun,run,calc -show drun"
+bindsym $mod+d exec "rofi -show drun"
 
 # Emoji picker
 bindsym $mod+period exec "rofimoji"
@@ -191,14 +199,17 @@ bindsym $mod+r mode "resize"
 # Set border
 for_window [class="^.*"] border pixel 2
 
+for_window [title="Friends List"] floating enable
+
 # Assign apps to workspaces
 assign [class="firefox"] 2
-assign [class="Telegram"] 4
 assign [class="obsidian"] 3
+assign [class="Telegram"] 4
+assign [class="discord"] 5
 assign [class="Spotify"] 6
-
-# Launch polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+assign [class="steam"] 7
+assign [class="qBittorrent"] 9
+assign [class="obs"] 10
 
 # Set colors
 set_from_resource $fg i3wm.color7 #f0f0f0
