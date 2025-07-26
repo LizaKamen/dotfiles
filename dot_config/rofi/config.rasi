@@ -1,5 +1,5 @@
 configuration {
-   modi: "drun,window,calc,p:'rofi-power-menu',wal:'rofi-wal-theme-switcher'";
+   modi: "drun,window,calc,p:'power-menu',wal:'wal-switcher'";
    font: "JetBrains Mono 12";
    terminal: "kitty";
    display-drun: "Apps ";
