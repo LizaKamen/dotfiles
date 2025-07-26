@@ -22,7 +22,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l
 exec --no-startup-id nm-applet
 
 # Set keyvoard layout
-exec_always setxkbmap -layout us,ru -option 'grp:win_space_toggle'
+exec_always setxkbmap -layout us,ru -option 'grp:caps_toggle'
 
 # Restore wal
 exec wal -R
