@@ -1,3 +1,5 @@
+@import "~/.cache/wal/colors-rofi-light"
+
 configuration {
    modi: "drun,window,calc,p:'power-menu',wal:'wal-switcher'";
    font: "JetBrains Mono 12";
@@ -10,4 +12,7 @@ configuration {
    sidebar-mode: true;
 }
 
-@import "~/.cache/wal/colors-rofi-light"
+* {
+    border-radius: 6px;
+}
+
